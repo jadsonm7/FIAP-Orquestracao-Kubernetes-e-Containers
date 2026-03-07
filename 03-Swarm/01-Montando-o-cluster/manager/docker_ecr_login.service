@@ -1,0 +1,13 @@
+[Unit]
+Description=Docker aws ecr login
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/etc/systemd/system/ecr-login.sh
+
+[Install]
+WantedBy=default.target
